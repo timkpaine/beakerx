@@ -21,8 +21,6 @@
 /// <reference path='../types/index.d.ts'/>
 
 import {extendHighlightModes, extendWithLineComment} from "./codeEditor";
-import {registerFeature} from './UIOptionsHelper';
-import {BeakerXKernel} from './kernel';
 import bkCoreManager from '../shared/bkCoreManager';
 
 import '../shared/style/beakerx.scss';
@@ -48,10 +46,7 @@ let options = { // updated from server's config & nb metadata
   run_on_kernel_ready: true
 };
 
-registerFeature(base_url);
-
 function callback_notebook_loaded() {
-  BeakerXKernel.installHandler();
 }
 
 function extendWindowObject() {
