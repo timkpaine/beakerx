@@ -78,3 +78,5 @@ cscope.po.out
 .settings/
 .recommenders/
 RemoteSystemsTempFiles/
+
+.autoversion

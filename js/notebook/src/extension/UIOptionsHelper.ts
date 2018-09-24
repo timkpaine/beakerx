@@ -17,8 +17,6 @@
 /// <reference path='../types/index.d.ts'/>
 
 import BeakerXApi from "../tree/Utils/BeakerXApi";
-import * as GistPublish from "./gistPublish/index";
-import * as DataBrowser from "./dataBrowser/index";
 
 export function registerFeature(baseUrl: string): void {
   if (!!Jupyter.NotebookList) {
@@ -83,14 +81,12 @@ function setupShowPublication(showPublication: boolean) {
   if (!showPublication) {
     return;
   }
-  GistPublish.registerFeature();
 }
 
 function setupShowCatalog(showCatalog: boolean) {
   if (!showCatalog) {
     return;
   }
-  DataBrowser.registerFeature();
 }
 
 function setupAutoSave(autoSave: boolean) {

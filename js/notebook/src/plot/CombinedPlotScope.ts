@@ -23,7 +23,6 @@ import CombinedPlotScopeUtils from './combinedPlotScopeUtils';
 import bkUtils from './../shared/bkUtils';
 import PlotFocus from './zoom/PlotFocus';
 import ContextMenu from './contextMenu/plotContextMenu';
-import { GistPublisherUtils } from "../GistPublisherUtils";
 
 import "jquery-ui/ui/widgets/resizable";
 
@@ -303,7 +302,6 @@ export default class CombinedPlotScope {
   }
 
   publish() {
-    GistPublisherUtils.publishScope(this);
   }
 
   updateModels(updateType) {

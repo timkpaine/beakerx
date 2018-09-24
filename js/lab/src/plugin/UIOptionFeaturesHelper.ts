@@ -14,7 +14,6 @@
  *  limitations under the License.
  */
 
-import * as GistPublish from "./gistPublish/index";
 import { ISettingRegistry, PageConfig } from "@jupyterlab/coreutils";
 import { ServerConnection } from "@jupyterlab/services";
 import { NotebookPanel } from "@jupyterlab/notebook";
@@ -109,11 +108,10 @@ class ShowPublicationFeature implements IUIOptionsFeature {
   constructor(private panel: NotebookPanel) {}
 
   public init(isEnabled: boolean) {
-    GistPublish.registerFeature(this.panel, isEnabled);
   }
 
   public update(isEnabled: boolean): void {
-    GistPublish.registerFeature(this.panel, isEnabled);
+    console.log(this.panel)
   }
 }
 

@@ -16,19 +16,12 @@ import './plot/bko-plot.css';
 export * from './BxHTML';
 export * from './Foldout';
 export * from './HTMLPre';
-export * from './SparkUI';
 export * from './RESTButton';
-export * from './SparkStateProgress';
-export * from './SparkConfiguration';
-export * from './SparkFoldout';
 export * from './TableDisplay';
 export * from './TabView';
 export * from './GridView';
 export * from './CyclingDisplayBox';
-export * from './EasyForm';
 export * from './Plot';
 export * from './Spinner';
-export * from './GistPublisher'
-export * from './GistPublisherUtils'
 
 export const version = require('../package.json').version;

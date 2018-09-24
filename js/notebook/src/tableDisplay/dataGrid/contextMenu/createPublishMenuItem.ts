@@ -17,7 +17,6 @@
 import MenuItem from '../../../shared/interfaces/contextMenuItemInterface';
 import DataGridContextMenu from "./DataGridContextMenu";
 import {BeakerXDataGrid} from "../BeakerXDataGrid";
-import {GistPublisherUtils} from "../../../GistPublisherUtils";
 
 export default function createPublishMenuItems(
   dataGrid: BeakerXDataGrid,
@@ -29,7 +28,7 @@ export default function createPublishMenuItems(
     {
       id: `beakerx:publish:${dataGrid.wrapperId}`,
       title: 'Publish...',
-      action: () => GistPublisherUtils.publishScope(dataGrid),
+      action: () => {},
       selector
     },
   ];

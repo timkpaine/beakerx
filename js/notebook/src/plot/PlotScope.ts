@@ -31,7 +31,6 @@ import ContextMenu from "./contextMenu/plotContextMenu";
 import zoomHelpers from './zoom/helpers';
 import plotTip from './plotTip';
 import saveAsContextMenu from './contextMenu/SaveAsContextMenu';
-import { GistPublisherUtils } from '../GistPublisherUtils';
 
 import 'jquery-ui/ui/widgets/draggable';
 import 'jquery-ui/ui/widgets/resizable';
@@ -402,7 +401,6 @@ export default class PlotScope {
   }
 
   publish() {
-    GistPublisherUtils.publishScope(this);
   }
 
   setModelData(data) {
