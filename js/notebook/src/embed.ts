@@ -16,7 +16,6 @@ import './plot/bko-plot.css';
 export * from './BxHTML';
 export * from './Foldout';
 export * from './HTMLPre';
-export * from './RESTButton';
 export * from './TableDisplay';
 export * from './TabView';
 export * from './GridView';

@@ -51,7 +51,6 @@ let options = { // updated from server's config & nb metadata
 registerFeature(base_url);
 
 function callback_notebook_loaded() {
-  enableInitializationCellsFeature(options);
   BeakerXKernel.installHandler();
 }
 
@@ -65,7 +64,6 @@ function extendWindowObject() {
   const bkObject = bkApp.getBeakerObject();
   const beakerxInstance = {
     ...plotApiList,
-    displayHTML,
     prefs: bkObject.beakerObj.prefs
   };
 

@@ -31,7 +31,6 @@ __webpack_public_path__ = document.querySelector('body').getAttribute('data-base
 export * from './BxHTML';
 export * from './Foldout';
 export * from './HTMLPre';
-export * from './RESTButton';
 export * from './TableDisplay';
 export * from './TabView';
 export * from './GridView';

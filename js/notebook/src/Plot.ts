@@ -30,8 +30,8 @@ export class PlotModel extends widgets.DOMWidgetModel {
     return {
       ...super.defaults(),_model_name : 'PlotModel',
       _view_name : 'PlotView',
-      _model_module : 'beakerx',
-      _view_module : 'beakerx',
+      _model_module : 'beakerx_table',
+      _view_module : 'beakerx_table',
       _model_module_version: BEAKERX_MODULE_VERSION,
       _view_module_version: BEAKERX_MODULE_VERSION
     }

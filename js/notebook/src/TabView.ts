@@ -22,8 +22,8 @@ export class TabModel extends widgets.TabModel {
       ...super.defaults(),
       _model_name: 'TabModel',
       _view_name: 'TabView',
-      _model_module: 'beakerx',
-      _view_module: 'beakerx',
+      _model_module: 'beakerx_tablebeakerx_table',
+      _view_module: 'beakerx_table',
       _model_module_version: BEAKERX_MODULE_VERSION,
       _view_module_version: BEAKERX_MODULE_VERSION
     }

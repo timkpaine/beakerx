@@ -23,7 +23,7 @@ if (window.require) {
   window.require.config({
     map: {
       "*": {
-        "beakerx": "nbextensions/beakerx/index",
+        "beakerx_table": "nbextensions/beakerx/index",
         "jupyter-js-widgets": "nbextensions/jupyter-js-widgets/extension",
         "@jupyter-widgets/base": "nbextensions/jupyter-js-widgets/extension",
         "@jupyter-widgets/controls": "nbextensions/jupyter-js-widgets/extension"

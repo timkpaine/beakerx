@@ -193,44 +193,5 @@ module.exports = [
         to: path.resolve(__dirname, '../lab/lib/index.d.ts')
       }])
     ])
-  },
-  {
-    // tree - notebook
-    entry: './src/tree.js',
-    output: {
-      filename: 'tree.js',
-      path: path.resolve(__dirname, '../../beakerx_table/static'),
-      libraryTarget: 'amd'
-    },
-    module: {
-      rules: rules
-    },
-    resolve: resolve,
-    externals: [
-      'base/js/namespace',
-      'require',
-    ],
-    watchOptions: {
-      ignored: /node_modules/
-    },
-    plugins: plugins
-  },
-  {// BeakerXTree JupyterLab bundle
-      entry: './src/tree-lab.ts',
-      output: {
-          filename: 'tree.js',
-          path: path.resolve(__dirname, '../lab/lib/'),
-          libraryTarget: 'amd'
-      },
-      module: {
-          rules: rules
-      },
-      resolve: resolve,
-      externals: externals.concat([
-          '@phosphor/widgets',
-          '@phosphor/commands',
-          '@phosphor/messaging',
-      ]),
-      plugins: plugins
-  },
+  }
 ];

@@ -22,8 +22,8 @@ export class BxHTMLModel extends widgets.HTMLModel {
             ...super.defaults(),
             _view_name: "BxHTMLView",
             _model_name: "BxHTMLModel",
-            _model_module: 'beakerx',
-            _view_module: 'beakerx',
+            _model_module: 'beakerx_table',
+            _view_module: 'beakerx_table',
             _model_module_version: BEAKERX_MODULE_VERSION,
             _view_module_version: BEAKERX_MODULE_VERSION
         };

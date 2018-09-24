@@ -27,8 +27,8 @@ export class FoldoutModel extends widgets.BoxModel {
       ...super.defaults(),
       _view_name: "FoldoutView",
       _model_name: "FoldoutModel",
-      _model_module: 'beakerx',
-      _view_module: 'beakerx',
+      _model_module: 'beakerx_table',
+      _view_module: 'beakerx_table',
       _model_module_version: BEAKERX_MODULE_VERSION,
       _view_module_version: BEAKERX_MODULE_VERSION
     };

@@ -24,8 +24,8 @@ export class GridViewModel extends widgets.VBoxModel {
       ...super.defaults(),
       _model_name: 'GridViewModel',
       _view_name: 'GridView',
-      _model_module: 'beakerx',
-      _view_module: 'beakerx',
+      _model_module: 'beakerx_table',
+      _view_module: 'beakerx_table',
       _model_module_version: BEAKERX_MODULE_VERSION,
       _view_module_version: BEAKERX_MODULE_VERSION
     }

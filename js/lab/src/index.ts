@@ -25,11 +25,11 @@ import { themeLightPlugin, themeDarkPlugin } from './theme';
 import beakerx from "./beakerx";
 
 export const beakerx_ext: JupyterLabPlugin<void>|IPlugin<JupyterLab, void> = {
-  id: 'beakerx',
+  id: 'beakerx_table',
   requires: [IJupyterWidgetRegistry, ISettingRegistry],
   activate: (app: JupyterLab, widgets: IJupyterWidgetRegistry, settings: ISettingRegistry): void => {
     widgets.registerWidget({
-      name: 'beakerx',
+      name: 'beakerx_table',
       version: beakerx.version,
       exports: beakerx
     });
