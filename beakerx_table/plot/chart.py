@@ -15,13 +15,13 @@
 import json
 
 from pandas import DataFrame
-from beakerx.plot.legend import LegendPosition, LegendLayout
-from beakerx.utils import *
-from beakerx.plot.plotitem import *
-from beakerx.plot.plotitem_treemap import *
+from beakerx_table.plot.legend import LegendPosition, LegendLayout
+from beakerx_table.utils import *
+from beakerx_table.plot.plotitem import *
+from beakerx_table.plot.plotitem_treemap import *
 from enum import Enum
 from traitlets import Unicode, Dict
-from beakerx.beakerx_widgets import BeakerxDOMWidget
+from beakerx_table.beakerx_widgets import BeakerxDOMWidget
 from ipykernel.comm import Comm
 
 

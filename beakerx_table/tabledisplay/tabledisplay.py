@@ -12,10 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from beakerx.beakerx_widgets import *
+from beakerx_table.beakerx_widgets import *
 from traitlets import Unicode, Dict
-from beakerx.utils import *
-from beakerx.tabledisplay.tableitems import *
+from beakerx_table.utils import *
+from beakerx_table.tabledisplay.tableitems import *
 from pandas import DataFrame, RangeIndex, MultiIndex
 from ipykernel.comm import Comm
 import types

@@ -13,7 +13,7 @@
 # limitations under the License.
 
 from enum import Enum
-from beakerx.utils import *
+from beakerx_table.utils import *
 
 
 class LegendLayout(Enum):

@@ -12,9 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from beakerx.beakerx_widgets import *
-from beakerx.tabledisplay import *
-from beakerx.plot.chart import *
+from beakerx_table.beakerx_widgets import *
+from beakerx_table.tabledisplay import *
+from beakerx_table.plot.chart import *
 from ipywidgets import Widget
 from abc import *
 from pandas import *

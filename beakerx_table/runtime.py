@@ -18,8 +18,8 @@ import os, json, numpy, pandas, requests, base64
 import urllib.request, urllib.parse, urllib.error, urllib.request, urllib.error, urllib.parse, IPython, datetime, calendar, math, traceback, time
 from traitlets import Unicode
 
-from beakerx.plot import BaseObject, chart
-from beakerx.tabledisplay import *
+from beakerx_table.plot import BaseObject, chart
+from beakerx_table.tabledisplay import *
 from ipykernel.comm import Comm
 from IPython.display import display_html
 from IPython import get_ipython
