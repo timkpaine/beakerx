@@ -56,13 +56,7 @@ setup_args = dict(
     keywords            = [
         'ipython',
         'jupyter',
-        'widgets',
-        'java',
-        'clojure',
-        'groovy',
-        'scala',
-        'kotlin',
-        'sql',
+        'widgets'
     ],
 
     classifiers         = [
@@ -78,24 +72,16 @@ setup_args = dict(
         'Programming Language :: Python :: 3.6',
     ],
     entry_points={
-        'console_scripts': [
-            'beakerx = beakerx:run'
-        ]
     },
     package_data={
         'beakerx': [
-            'kernel/*/kernel.json'
         ]
     },
-    data_files          = [(
-        'share/jupyter/nbextensions/beakerx',
-        get_data_files(os.path.join('beaker'))
-    )],
+    data_files          = [],
     install_requires    = [
         'notebook >=4.4.0',
         'ipywidgets >=7.0.0',
-        'pandas',
-        'py4j'
+        'pandas'
 
     ],
     python_requires='>=3',

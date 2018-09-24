@@ -73,7 +73,7 @@ else:
 # ---------------------------------------------------------------------------
 def _classpath_for(kernel):
     return pkg_resources.resource_filename(
-            'beakerx', os.path.join('kernel', kernel, 'lib', '*'))
+            'beakerx_table', os.path.join('kernel', kernel, 'lib', '*'))
 
 def get_version(path):
     version = {}

@@ -16,7 +16,6 @@
 
 import { createPublishMenuItems, createSaveAsMenuItems } from "./createMenuItems";
 import BkoContextMenu from '../../contextMenu/BkoContextMenu';
-import BeakerXApi from "../../tree/Utils/BeakerXApi";
 
 export default class PlotContextMenu extends BkoContextMenu {
   constructor(scope: any) {
@@ -30,14 +29,8 @@ export default class PlotContextMenu extends BkoContextMenu {
       ...createSaveAsMenuItems(this.scope),
     ];
 
-    new BeakerXApi(`${window.location.origin}/`)
-      .loadSettings()
-      .then(ret => {
-        if (ret.ui_options.show_publication) {
-          menuItems.push(...createPublishMenuItems(this.scope));
-        }
-        this.createItems(menuItems, this.contextMenu);
-        this.bindEvents();
-      });
+      menuItems.push(...createPublishMenuItems(this.scope));
+      this.createItems(menuItems, this.contextMenu);
+      this.bindEvents();
   }
 }
