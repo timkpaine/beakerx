@@ -19,7 +19,6 @@ import urllib.request, urllib.parse, urllib.error, urllib.request, urllib.error,
 from traitlets import Unicode
 
 from beakerx.plot import BaseObject, chart
-from beakerx.easyform import easyform
 from beakerx.tabledisplay import *
 from ipykernel.comm import Comm
 from IPython.display import display_html

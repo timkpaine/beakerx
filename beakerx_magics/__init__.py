@@ -13,10 +13,4 @@
 # limitations under the License.
 
 from .kernel_magic import *
-from .clojure_magic import *
-from .groovy_magic import *
-from .java_magic import *
-from .kotlin_magic import *
-from .scala_magic import *
 from .sql_magic import *
-from .jvm_kernel_magic import *

@@ -20,7 +20,6 @@ import { IPlugin } from '@phosphor/application';
 import { JupyterLab, JupyterLabPlugin } from '@jupyterlab/application';
 import { ISettingRegistry } from "@jupyterlab/coreutils";
 import BeakerxExtension from './plugin';
-import BeakerxTreeJupyterLabPlugin from "./tree";
 import RequirejsLoader from "./plugin/requirejs";
 import { themeLightPlugin, themeDarkPlugin } from './theme';
 import beakerx from "./beakerx";
@@ -40,7 +39,6 @@ export const beakerx_ext: JupyterLabPlugin<void>|IPlugin<JupyterLab, void> = {
   autoStart: true
 };
 
-export const tree_ext: JupyterLabPlugin<void> = BeakerxTreeJupyterLabPlugin;
 
 export const requirejs_ext: JupyterLabPlugin<void> = {
   id: 'beakerx:requirejs',
@@ -57,7 +55,6 @@ export const beakerx_theme_dark_ext: JupyterLabPlugin<void> = themeDarkPlugin;
 export default [
   requirejs_ext,
   beakerx_ext,
-  tree_ext,
   beakerx_theme_light_ext,
   beakerx_theme_dark_ext,
 ];
