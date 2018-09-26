@@ -451,19 +451,7 @@ class BeakerX:
             val = transform(val)
             args['value'] = json.dumps(val, cls=DataFrameEncoder)
             state = {'state': args}
-        if self._comm is None:
-            self.init_autotranslation_comm()
         self._comm.send(data=state)
-
-    def init_autotranslation_comm(self):
-        self._comm = Comm(target_name='beakerx.autotranslation')
-        self._comm.open()
-
-    def get(self, var):
-        result = autotranslation_get(var)
-        if result == 'undefined':
-            raise NameError('name \'' + var + '\' is not defined on the beakerx object')
-        return transformBack(json.loads(result))
 
     def set_session(self, id):
         self.session_id = id
@@ -473,14 +461,13 @@ class BeakerX:
         ip.display_formatter.formatters['application/json'] = MyJSONFormatter(parent=ip.display_formatter)
 
     def set(self, var, val):
-        autotranslation_update(var, val)
         return self.set4(var, val, False, True)
 
     def unset(self, var):
         return self.set4(var, None, True, True)
 
     def isDefined(self, var):
-        return autotranslation_get(var) != 'undefined'
+        return var != 'undefined'
 
     def createOutputContainer(self):
         return OutputContainer()
@@ -605,11 +592,6 @@ class BeakerX:
 
     def __delattr__(self, name):
         return self.unset(name)
-
-
-def get_auth_token():
-    token_string = 'beakerx:' + os.environ['BEAKERX_AUTOTRANSLATION_PASSWORD']
-    return 'Basic ' + base64.b64encode(token_string.encode('utf-8')).decode()
 
 
 def get_context_session():
