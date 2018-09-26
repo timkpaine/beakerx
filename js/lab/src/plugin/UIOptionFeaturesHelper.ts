@@ -14,8 +14,7 @@
  *  limitations under the License.
  */
 
-import { ISettingRegistry, PageConfig } from "@jupyterlab/coreutils";
-import { ServerConnection } from "@jupyterlab/services";
+import { ISettingRegistry } from "@jupyterlab/coreutils";
 import { NotebookPanel } from "@jupyterlab/notebook";
 import { CodeCell } from "@jupyterlab/cells";
 import { JupyterLab } from "@jupyterlab/application";
@@ -49,52 +48,25 @@ export default class UIOptionFeaturesHelper {
       this.onActiveChanged();
     });
 
-    this
-      .loadSettings()
-      .then((data) => {
-        this.initFeatures(data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
+    this.initFeatures();
   }
 
   private onActiveChanged(): void {
-    this.loadSettings()
-      .then((data) => {
-        this.updateFeatures(data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
+    this.updateFeatures();
   }
 
-  private initFeatures(data): void {
-    this.showPublicationFeature.init(data.beakerx.ui_options.show_publication);
-    this.autoCloseBracketsFeature.init(data.beakerx.ui_options.auto_close)
-    this.autoSaveFeature.init(data.beakerx.ui_options.auto_save);
-    this.improveFontsFeature.init(data.beakerx.ui_options.improve_fonts);
+  private initFeatures(): void {
+    this.showPublicationFeature.init(true);
+    this.autoCloseBracketsFeature.init(true)
+    this.autoSaveFeature.init(true);
+    this.improveFontsFeature.init(true);
   }
 
-  private updateFeatures(data): void {
-    this.showPublicationFeature.update(data.beakerx.ui_options.show_publication);
-    this.autoCloseBracketsFeature.update(data.beakerx.ui_options.auto_close)
-    this.autoSaveFeature.update(data.beakerx.ui_options.auto_save);
-    this.improveFontsFeature.update(data.beakerx.ui_options.improve_fonts);
-  }
-
-  private loadSettings(): Promise<any> {
-    return new Promise<any>((resolve, reject) => {
-      let serverSettings = ServerConnection.makeSettings();
-      let settingsUrl = `${PageConfig.getBaseUrl()}beakerx/settings`;
-      ServerConnection.makeRequest(
-        settingsUrl,
-        { method: 'GET' },
-        serverSettings
-      )
-        .then(response => resolve(response.json()))
-        .catch(reason => { reject(reason); console.log(reason); });
-    });
+  private updateFeatures(): void {
+    this.showPublicationFeature.update(true);
+    this.autoCloseBracketsFeature.update(true);
+    this.autoSaveFeature.update(true);
+    this.improveFontsFeature.update(true);
   }
 }
 

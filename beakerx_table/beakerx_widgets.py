@@ -122,8 +122,8 @@ class BeakerxVBox(VBox):
 class CyclingDisplayBox(BeakerxBox):
     _view_name = Unicode('CyclingDisplayBoxView').tag(sync=True)
     _model_name = Unicode('CyclingDisplayBoxModel').tag(sync=True)
-    _view_module = Unicode('beakerx').tag(sync=True)
-    _model_module = Unicode('beakerx').tag(sync=True)
+    _view_module = Unicode('beakerx_table').tag(sync=True)
+    _model_module = Unicode('beakerx_table').tag(sync=True)
 
     period = Int(5000).tag(sync=True)
 
@@ -138,8 +138,8 @@ class CyclingDisplayBox(BeakerxBox):
 class GridView(BeakerxVBox):
     _view_name = Unicode('GridView').tag(sync=True)
     _model_name = Unicode('GridViewModel').tag(sync=True)
-    _view_module = Unicode('beakerx').tag(sync=True)
-    _model_module = Unicode('beakerx').tag(sync=True)
+    _view_module = Unicode('beakerx_table').tag(sync=True)
+    _model_module = Unicode('beakerx_table').tag(sync=True)
 
     def __init__(self, rows):
         super(GridView, self).__init__()
