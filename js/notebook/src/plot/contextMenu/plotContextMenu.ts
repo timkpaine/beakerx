@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-import { createPublishMenuItems, createSaveAsMenuItems } from "./createMenuItems";
+import { createSaveAsMenuItems } from "./createMenuItems";
 import BkoContextMenu from '../../contextMenu/BkoContextMenu';
 
 export default class PlotContextMenu extends BkoContextMenu {
@@ -29,7 +29,6 @@ export default class PlotContextMenu extends BkoContextMenu {
       ...createSaveAsMenuItems(this.scope),
     ];
 
-      menuItems.push(...createPublishMenuItems(this.scope));
       this.createItems(menuItems, this.contextMenu);
       this.bindEvents();
   }

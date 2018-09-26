@@ -44,16 +44,3 @@ export function createSaveAsMenuItems(scope: any): MenuItem[] {
     },
   ];
 }
-
-export function createPublishMenuItems(scope: any): MenuItem[] {
-  const selector = `#${scope.id}`;
-
-  return [
-    {
-      id: `beakerx:publish:${scope.id}`,
-      title: 'Publish...',
-      action: () => scope.publish(),
-      selector
-    },
-  ];
-}
