@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
   "name": "beakerx_table-jupyterlab",
   "version": "1.1.0",
+=======
+  "name": "beakerx-jupyterlab",
+  "version": "1.2.0",
+>>>>>>> 5c7d7348d6470d7e1f6d751d589a8b5d69616664
   "description": "BeakerX: Beaker Extensions for JupyterLab",
   "author": "Two Sigma Open Source, LLC",
   "main": "dist/index.js",
