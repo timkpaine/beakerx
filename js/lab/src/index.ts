@@ -21,7 +21,6 @@ import { JupyterLab, JupyterLabPlugin } from '@jupyterlab/application';
 import { ISettingRegistry } from "@jupyterlab/coreutils";
 import BeakerxExtension from './plugin';
 import RequirejsLoader from "./plugin/requirejs";
-import { themeLightPlugin, themeDarkPlugin } from './theme';
 import beakerx from "./beakerx";
 
 export const beakerx_ext: JupyterLabPlugin<void>|IPlugin<JupyterLab, void> = {
@@ -49,12 +48,8 @@ export const requirejs_ext: JupyterLabPlugin<void> = {
   }
 };
 
-export const beakerx_theme_light_ext: JupyterLabPlugin<void> = themeLightPlugin;
-export const beakerx_theme_dark_ext: JupyterLabPlugin<void> = themeDarkPlugin;
 
 export default [
   requirejs_ext,
   beakerx_ext,
-  beakerx_theme_light_ext,
-  beakerx_theme_dark_ext,
 ];

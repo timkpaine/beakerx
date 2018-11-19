@@ -21,34 +21,32 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@jupyter-widgets/base": "^1.2.1",
+    "@jupyter-widgets/base": "^1.2.0",
     "@jupyter-widgets/controls": "^1.4.0",
-    "@jupyter-widgets/output": "^1.1.1",
-    "@jupyterlab/application": "^0.17.2",
-    "@jupyterlab/apputils": "^0.17.2",
-    "@jupyterlab/cells": "^0.17.2",
-    "@jupyterlab/codemirror": "^0.17.3",
-    "@jupyterlab/coreutils": "^2.1.4",
-    "@jupyterlab/docregistry": "^0.17.2",
-    "@jupyterlab/notebook": "^0.17.2",
-    "@jupyterlab/outputarea": "^0.17.3",
-    "@jupyterlab/rendermime": "^0.17.3",
-    "@jupyterlab/rendermime-interfaces": "^1.1.2",
-    "@jupyterlab/services": "^3.0.3",
+    "@jupyter-widgets/output": "^1.1.0",
+    "@jupyterlab/application": "^0.18.0",
+    "@jupyterlab/apputils": "^0.18.0",
+    "@jupyterlab/cells": "^0.18.0",
+    "@jupyterlab/codemirror": "^0.18.0",
+    "@jupyterlab/coreutils": "^2.2.0",
+    "@jupyterlab/docregistry": "^0.18.0",
+    "@jupyterlab/notebook": "^0.18.0",
+    "@jupyterlab/outputarea": "^0.18.0",
+    "@jupyterlab/rendermime": "^0.18.0",
+    "@jupyterlab/rendermime-interfaces": "^1.2.0",
+    "@jupyterlab/services": "^3.1.0",
     "@phosphor/datagrid": "^0.1.6",
     "@phosphor/application": "^1.6.0",
-    "@types/node": "^8.0.56",
+    "@types/jquery": "^3.3.11",
+    "@types/node": "^10.3.1",
     "rimraf": "^2.6.2",
-    "typescript": "~2.6.2"
+    "typescript": "~3.1.1"
   },
   "jupyterlab": {
-    "extension": "dist/index.js",
-    "themeDir": "src/theme/static"
+    "extension": "dist/index.js"
   },
   "files": [
     "dist/**/*.js",
-    "lib/*",
-    "src/theme/static/*.css",
-    "src/theme/static/fonts/**/*"
+    "lib/*"
   ]
 }
