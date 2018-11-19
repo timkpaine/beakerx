@@ -29,5 +29,3 @@ def _jupyter_nbextension_paths():
 
 def _jupyter_server_extension_paths():
     return [dict(module="beakerx_table")]
-
-beakerx = BeakerX()

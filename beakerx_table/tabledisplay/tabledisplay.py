@@ -12,18 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-<<<<<<< HEAD:beakerx_table/tabledisplay/tabledisplay.py
 from beakerx_table.beakerx_widgets import *
 from traitlets import Unicode, Dict
 from beakerx_table.utils import *
 from beakerx_table.tabledisplay.tableitems import *
 from pandas import DataFrame, RangeIndex, MultiIndex
-=======
 import types
-from beakerx.beakerx_widgets import *
-from beakerx.tabledisplay.tableitems import *
-from beakerx.utils import *
->>>>>>> 5c7d7348d6470d7e1f6d751d589a8b5d69616664:beakerx/beakerx/tabledisplay/tabledisplay.py
 from ipykernel.comm import Comm
 from pandas import DataFrame, RangeIndex, MultiIndex
 from traitlets import Unicode, Dict
