@@ -1,0 +1,27 @@
+language: python
+cache: 
+  - pip
+  - npm
+
+python:
+  - "3.6"
+
+install:
+    - pip install -r requirements.txt
+    - pip install codecov
+
+script: 
+  - cd test && npm install && python3 run_tests.py
+  - cd js/notebook && npm install && npm run test
+
+
+after_success:
+    - codecov --token f8f2787b-4aa9-4161-8b13-88ddde282d57
+    # - coveralls
+
+branches:
+  only:
+  - master
+
+notifications:
+  email: false

@@ -18,7 +18,6 @@ import os
 import sys
 import subprocess
 import signal
-import test_console
 import test_util
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -85,7 +84,6 @@ def signal_handler(sgnl, frame):
     os.killpg(os.getpgid(beakerx.pid), signal.SIGKILL)
     test_util.kill_processes('jupyter')
     test_util.kill_processes('webdriver')
-    test_util.kill_processes('java')
     sys.exit(20)
 signal.signal(signal.SIGINT, signal_handler)
 
@@ -95,10 +93,6 @@ result=subprocess.call("yarn run test", shell=True)
 # Send the signal to all the process groups
 os.killpg(os.getpgid(beakerx.pid), signal.SIGKILL)
 os.killpg(os.getpgid(webcontrol.pid), signal.SIGKILL)
-test_util.kill_processes('java')
-
-if not result:
-    result = test_console.test_lsmagic()
 
 if result:
     sys.exit(20)
