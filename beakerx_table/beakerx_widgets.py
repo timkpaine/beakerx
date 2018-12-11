@@ -119,22 +119,6 @@ class BeakerxVBox(VBox):
     style = None
 
 
-class CyclingDisplayBox(BeakerxBox):
-    _view_name = Unicode('CyclingDisplayBoxView').tag(sync=True)
-    _model_name = Unicode('CyclingDisplayBoxModel').tag(sync=True)
-    _view_module = Unicode('beakerx_table').tag(sync=True)
-    _model_module = Unicode('beakerx_table').tag(sync=True)
-
-    period = Int(5000).tag(sync=True)
-
-    def __init__(self, children):
-        super(CyclingDisplayBox, self).__init__()
-        self.children += tuple(children)
-
-    def setPeriod(self, period):
-        self.period = period
-
-
 class GridView(BeakerxVBox):
     _view_name = Unicode('GridView').tag(sync=True)
     _model_name = Unicode('GridViewModel').tag(sync=True)
@@ -144,23 +128,3 @@ class GridView(BeakerxVBox):
     def __init__(self, rows):
         super(GridView, self).__init__()
         self.children += tuple(rows)
-
-
-class SelectionContainer(BeakerxBox):
-    _titles = Dict().tag(sync=True)
-
-    def __init__(self, childrens, labels):
-        super(SelectionContainer, self).__init__()
-        labels_dict = dict()
-        for x in labels:
-            labels_dict[len(labels_dict)] = x
-        self._titles = labels_dict
-        self.children += tuple(childrens)
-
-
-class Tab(SelectionContainer):
-    _view_name = Unicode('TabView').tag(sync=True)
-    _model_name = Unicode('TabModel').tag(sync=True)
-
-    def __init__(self, childrens, labels):
-        super(Tab, self).__init__(childrens, labels)
