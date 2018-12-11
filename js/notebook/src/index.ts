@@ -29,13 +29,6 @@ __webpack_public_path__ = document.querySelector('body').getAttribute('data-base
 
 // Export widget models and views, and the npm package version number.
 export * from './BxHTML';
-export * from './Foldout';
-export * from './HTMLPre';
 export * from './TableDisplay';
-export * from './TabView';
-export * from './GridView';
-export * from './CyclingDisplayBox';
-export * from './Plot';
-export * from './Spinner';
 
 export const version = require('../package.json').version;

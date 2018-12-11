@@ -20,7 +20,6 @@
 
 /// <reference path='../types/index.d.ts'/>
 
-import {extendHighlightModes, extendWithLineComment} from "./codeEditor";
 import bkCoreManager from '../shared/bkCoreManager';
 
 import '../shared/style/beakerx.scss';
@@ -32,7 +31,6 @@ const comm = require('services/kernels/comm');
 const utils = require('base/js/utils');
 const Jupyter = require('base/js/namespace');
 const events = require('base/js/events');
-const plotApi = require('../plot/plotApi');
 const big = require('big.js');
 
 window['Big'] = big;
@@ -54,11 +52,9 @@ function extendWindowObject() {
     return;
   }
 
-  const plotApiList = plotApi.list();
   const bkApp = bkCoreManager.getBkApp();
   const bkObject = bkApp.getBeakerObject();
   const beakerxInstance = {
-    ...plotApiList,
     prefs: bkObject.beakerObj.prefs
   };
 
@@ -83,9 +79,6 @@ function setupNotebook() {
         : events.on('notebook_loaded.Notebook', callback_notebook_loaded);
     })
     .catch((reason) => { console.error(log_prefix, 'unhandled error:', reason); });
-
-  extendWithLineComment(Jupyter, CodeMirror);
-  extendHighlightModes(Jupyter);
 }
 
 export const load_ipython_extension = () => {

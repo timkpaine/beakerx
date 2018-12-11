@@ -34,6 +34,12 @@ def hasCondaPackage(package_name):
     try:
         output = check_output(['conda', 'list']).decode('utf-8')
         result = re.search(package_name, output)
+    except FileNotFoundError:
+        try:
+            output = check_output(['pip', 'list']).decode('utf-8')
+            result = re.search(package_name, output)
+        except CalledProcessError:
+            result = None
     except CalledProcessError:
         result = None
     return result is not None

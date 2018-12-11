@@ -14,13 +14,7 @@ import './plot/bko-combinedplot.css';
 import './plot/bko-plot.css';
 
 export * from './BxHTML';
-export * from './Foldout';
-export * from './HTMLPre';
 export * from './TableDisplay';
-export * from './TabView';
 export * from './GridView';
-export * from './CyclingDisplayBox';
-export * from './Plot';
-export * from './Spinner';
 
 export const version = require('../package.json').version;

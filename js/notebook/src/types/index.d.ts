@@ -19,13 +19,7 @@
 
 // Export widget models and views, and the npm package version number.
 export * from './BxHTML';
-export * from './Foldout';
-export * from './HTMLPre';
 export * from './TableDisplay';
-export * from './TabView';
 export * from './GridView';
-export * from './CyclingDisplayBox';
-export * from './EasyForm';
-export * from './Plot';
 
 export declare const version: string;

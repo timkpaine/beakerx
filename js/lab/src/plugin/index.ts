@@ -19,10 +19,6 @@ import { DisposableDelegate } from '@phosphor/disposable';
 import { DocumentRegistry } from '@jupyterlab/docregistry';
 import { INotebookModel, NotebookPanel } from '@jupyterlab/notebook';
 import { JupyterLab } from "@jupyterlab/application";
-import { ISettingRegistry } from "@jupyterlab/coreutils";
-import { registerCommTargets } from './comm';
-import {extendHighlightModes, registerCommentOutCmd} from './codeEditor';
-import UIOptionFeaturesHelper from "./UIOptionFeaturesHelper";
 
 function displayHTML(widget: Widget, html: string): void {
   if (!widget.node || !html) {
@@ -44,20 +40,14 @@ function registerGlobal(): void {
 class BeakerxExtension implements DocumentRegistry.WidgetExtension {
   constructor(
     private app: JupyterLab,
-    private settings: ISettingRegistry
   ) {}
 
   createNew(panel: NotebookPanel, context: DocumentRegistry.IContext<INotebookModel>) {
     registerGlobal();
 
     let app = this.app;
-    let settings = this.settings;
 
     Promise.all([panel.session.ready, context.ready]).then(function() {
-      extendHighlightModes(panel);
-      registerCommentOutCmd(panel);
-      registerCommTargets(panel, context);
-
       const originalProcessFn = app.commands.processKeydownEvent;
       app.commands.processKeydownEvent = (event) => {
         if (window.beakerx.tableFocused) {
@@ -66,8 +56,6 @@ class BeakerxExtension implements DocumentRegistry.WidgetExtension {
 
         return originalProcessFn.call(app.commands, event);
       };
-
-      new UIOptionFeaturesHelper(app, settings, panel).registerFeatures();
     });
 
     return new DisposableDelegate(() => { });

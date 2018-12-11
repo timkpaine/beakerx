@@ -14,7 +14,6 @@
  *  limitations under the License.
  */
 
-import './global.env';
 import { IJupyterWidgetRegistry } from '@jupyter-widgets/base';
 import { IPlugin } from '@phosphor/application';
 import { JupyterLab, JupyterLabPlugin } from '@jupyterlab/application';
@@ -33,7 +32,7 @@ export const beakerx_ext: JupyterLabPlugin<void>|IPlugin<JupyterLab, void> = {
       exports: beakerx
     });
 
-    app.docRegistry.addWidgetExtension('Notebook', new BeakerxExtension(app, settings));
+    app.docRegistry.addWidgetExtension('Notebook', new BeakerxExtension(app));
   },
   autoStart: true
 };
