@@ -19,7 +19,7 @@ import {darken, DEFAULT_DATA_FONT_SIZE} from "./style/dataGridStyle";
 import {KEYBOARD_KEYS} from "./event/enums";
 import DataGridColumn from "./column/DataGridColumn";
 import * as moment from 'moment-timezone/builds/moment-timezone-with-data';
-import {sanitizeHTML} from "../../plot/plotSanitize";
+import {sanitizeHTML} from "../../sanitize";
 import BeakerXThemeHelper from "../../BeakerXThemeHelper";
 import {CellRenderer} from "@phosphor/datagrid";
 import {BeakerXDataGrid} from "./BeakerXDataGrid";

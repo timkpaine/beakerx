@@ -21,6 +21,7 @@ var ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 var TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 var tsConfigPath = path.resolve(__dirname, './src/tsconfig.json');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var PerspectivePlugin = require("@jpmorganchase/perspective/webpack-plugin");
 
 // Custom webpack loaders are generally the same for all webpack bundles, hence
 // stored in a separate local variable.
@@ -44,7 +45,8 @@ var rules = [
   { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=application/octet-stream" },
   { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader" },
   { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=image/svg+xml" },
-  { test: /\.html$/, use: 'html-loader' }
+  { test: /\.html$/, use: 'html-loader' },
+  { test: /\.js$/, exclude: /node_modules/, use: {loader: 'babel-loader'}},
 ];
 
 var plugins = [
@@ -63,7 +65,8 @@ var plugins = [
   }),
   new webpack.DefinePlugin({
     BEAKERX_MODULE_VERSION: JSON.stringify("*") // The latest version
-  })
+  }),
+  new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /(en|es|fr)$/), new PerspectivePlugin()
 ];
 
 var externals = [
@@ -109,7 +112,12 @@ module.exports = [
     watchOptions: {
       ignored: /node_modules/
     },
-    plugins: plugins
+    plugins: plugins,
+    resolveLoader: {
+        alias: {
+            "file-worker-loader": "@jpmorganchase/perspective/src/loader/file_worker_loader.js"
+        }
+    }
   },
   {// Bundle for the notebook containing the custom widget views and models
     //
@@ -131,7 +139,12 @@ module.exports = [
     watchOptions: {
       ignored: /node_modules/
     },
-    plugins: plugins
+    plugins: plugins,
+    resolveLoader: {
+        alias: {
+            "file-worker-loader": "@jpmorganchase/perspective/src/loader/file_worker_loader.js"
+        }
+    }
   },
   {// Embeddable beakerx bundle
     //
@@ -159,7 +172,12 @@ module.exports = [
     },
     resolve: resolve,
     externals: externals,
-    plugins: plugins
+    plugins: plugins,
+    resolveLoader: {
+        alias: {
+            "file-worker-loader": "@jpmorganchase/perspective/src/loader/file_worker_loader.js"
+        }
+    }
   },
   {// Beakerx JupyterLab bundle
     //
@@ -175,6 +193,11 @@ module.exports = [
       rules: rules
     },
     resolve: resolve,
+    resolveLoader: {
+        alias: {
+            "file-worker-loader": "@jpmorganchase/perspective/src/loader/file_worker_loader.js"
+        }
+    },
     externals: externals.concat([
       '@phosphor/widgets',
       '@phosphor/commands',

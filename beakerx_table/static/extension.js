@@ -523,11 +523,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-
 // This file contains the javascript that is run when the notebook is loaded.
 // It contains some requirejs configuration and the `load_ipython_extension`
 // which is required for any notebook extension.
-
 // Configure requirejs
 if (window.require) {
   window.require.config({
@@ -554,7 +552,6 @@ var extension = __webpack_require__(3).default;
   };
 }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
 
 /***/ }),
 /* 3 */
