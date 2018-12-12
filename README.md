@@ -15,6 +15,7 @@
 -->
 
 # Just the grid component from BeakerX
+[![Build Status](https://travis-ci.org/timkpaine/beakerx.svg?branch=master)](https://travis-ci.org/timkpaine/beakerx)
 
 ## Attribution
 
