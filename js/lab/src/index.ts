@@ -18,7 +18,6 @@ import { IJupyterWidgetRegistry } from '@jupyter-widgets/base';
 import { IPlugin } from '@phosphor/application';
 import { JupyterLab, JupyterLabPlugin } from '@jupyterlab/application';
 import { ISettingRegistry } from "@jupyterlab/coreutils";
-import BeakerxExtension from './plugin';
 import RequirejsLoader from "./plugin/requirejs";
 import beakerx from "./beakerx";
 
@@ -31,8 +30,6 @@ export const beakerx_ext: JupyterLabPlugin<void>|IPlugin<JupyterLab, void> = {
       version: beakerx.version,
       exports: beakerx
     });
-
-    app.docRegistry.addWidgetExtension('Notebook', new BeakerxExtension(app));
   },
   autoStart: true
 };
