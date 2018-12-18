@@ -19,7 +19,7 @@ from beakerx_table.tabledisplay.tableitems import *
 from pandas import DataFrame, RangeIndex, MultiIndex
 import types
 from ipykernel.comm import Comm
-from pandas import DataFrame, RangeIndex, MultiIndex
+from pandas import DataFrame, RangeIndex, MultiIndex, DatetimeIndex
 from traitlets import Unicode, Dict
 
 
@@ -127,6 +127,8 @@ class Table(BaseObject):
 
     @staticmethod
     def get_tz(index):
+        if not isinstance(index, DatetimeIndex):
+            return None
         tz = index.tz
         if tz is None:
             return None

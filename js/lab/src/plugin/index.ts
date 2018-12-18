@@ -14,28 +14,10 @@
  *  limitations under the License.
  */
 
-import { Widget } from '@phosphor/widgets';
 import { DisposableDelegate } from '@phosphor/disposable';
 import { DocumentRegistry } from '@jupyterlab/docregistry';
 import { INotebookModel, NotebookPanel } from '@jupyterlab/notebook';
 import { JupyterLab } from "@jupyterlab/application";
-
-function displayHTML(widget: Widget, html: string): void {
-  if (!widget.node || !html) {
-    return;
-  }
-
-  const childElement = document.createElement('pre');
-
-  childElement.classList.add('jp-RenderedHTML');
-  childElement.innerHTML = html;
-  widget.node.appendChild(childElement);
-}
-
-function registerGlobal(): void {
-  window.beakerx = window.beakerx || {};
-  window.beakerx.displayHTML = displayHTML;
-}
 
 class BeakerxExtension implements DocumentRegistry.WidgetExtension {
   constructor(
@@ -43,7 +25,6 @@ class BeakerxExtension implements DocumentRegistry.WidgetExtension {
   ) {}
 
   createNew(panel: NotebookPanel, context: DocumentRegistry.IContext<INotebookModel>) {
-    registerGlobal();
 
     let app = this.app;
 
