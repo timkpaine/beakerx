@@ -72,23 +72,9 @@ setup_args = dict(
         'Programming Language :: Python :: 3.6',
     ],
     entry_points={
-<<<<<<< HEAD:setup.py
     },
     package_data={
-        'beakerx': [
-=======
-        'console_scripts': [
-            'beakerx = beakerx:run',
-            'beakerx_databrowser = beakerx_databrowser:run'
-        ]
-    },
-    package_data={
-        'beakerx': [
-            'kernel/*/kernel.json'
-        ],
-        'beakerx_datacatalog': [
-            'static/*.js'
->>>>>>> 05c547cf62c2dcc0ed3f7294235d4096103119a9:beakerx/setup.py
+        'beakerx_table': [
         ]
     },
     data_files          = [],
